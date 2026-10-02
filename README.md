@@ -1,16 +1,24 @@
-# yum_quick
+# YumQuick - Food Delivery App
 
-A new Flutter project.
+Flutter UI implementation of the "Food App - Home & Details" Figma design.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Splash, Welcome, Login and Sign Up screens with form validation
+- Home screen with categories, best sellers, promo banner and recommendations
+- Category list with sorting
+- Details screen with quantity, add-ons, total price, favourite and add to cart
+- Responsive layouts for phones and tablets
 
-A few resources to get you started if this is your first Flutter project:
+## Tech
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter
+- BLoC (`flutter_bloc`) for state management
+- Mock REST API using `http` and `MockClient`
+- Clean folder structure: `bloc`, `data`, `helpers`, `presentation`, `widgets`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Run
+
+```bash
+flutter pub get
+flutter run
