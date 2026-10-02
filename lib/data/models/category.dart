@@ -1,0 +1,18 @@
+import 'package:equatable/equatable.dart';
+
+class Category extends Equatable {
+  final String id;
+  final String name;
+  final String icon;
+
+  const Category({required this.id, required this.name, required this.icon});
+
+  factory Category.fromJson(Map<String, dynamic> j) => Category(
+    id: j['id'] as String,
+    name: j['name'] as String,
+    icon: j['icon'] as String,
+  );
+
+  @override
+  List<Object?> get props => [id, name, icon];
+}
