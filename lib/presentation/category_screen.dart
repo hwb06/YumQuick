@@ -82,7 +82,7 @@ class _CategoryView extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.fromLTRB(context.w(16), context.h(14), context.w(16), context.h(14)),
+            padding: EdgeInsets.fromLTRB(context.pagePad, context.h(14), context.pagePad, context.h(14)),
             child: CategoryRow(
               categories: s.categories,
               selectedId: s.selectedId,
@@ -107,7 +107,7 @@ class _CategoryView extends StatelessWidget {
 
   Widget _sortRow(BuildContext context, CategoryState s, CategoryBloc bloc) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(context.w(16), context.h(14), context.w(16), 6),
+      padding: EdgeInsets.fromLTRB(context.pagePad, context.h(14), context.pagePad, 6),
       child: Row(
         children: [
           Text('Sort By: ', style: AppStyles.body(size: context.sp(11), color: AppColors.textGrey)),
@@ -146,7 +146,7 @@ class _CategoryView extends StatelessWidget {
       return Center(child: Text('No items found', style: AppStyles.body(size: context.sp(14))));
     }
     return ListView.separated(
-      padding: EdgeInsets.fromLTRB(context.w(16), 8, context.w(16), 16),
+      padding: EdgeInsets.fromLTRB(context.pagePad, 8, context.pagePad, 16),
       itemCount: s.foods.length,
       separatorBuilder: (_, __) => const Padding(
         padding: EdgeInsets.symmetric(vertical: 12),

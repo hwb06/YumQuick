@@ -34,9 +34,9 @@ class HomeHeader extends StatelessWidget {
         bottom: false,
         child: Padding(
           padding: EdgeInsets.fromLTRB(
-            context.w(16),
+            context.pagePad,
             context.h(12),
-            context.w(16),
+            context.pagePad,
             context.h(18),
           ),
           child: Column(

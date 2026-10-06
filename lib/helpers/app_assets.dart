@@ -5,7 +5,7 @@ class AppAssets {
   static const _ico = 'assets/icons';
   static const _logo = 'assets/logo';
 
-  // Logo: folder khol kar exact naam confirm karein
+  // Logos
   static const logoOrange = '$_logo/logo_orange.png';
   static const logoYellow = '$_logo/logo_yellow.png';
 

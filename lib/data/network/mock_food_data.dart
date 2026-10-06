@@ -79,7 +79,7 @@ class MockFoodData {
     'bestSellers': [
       {'id': 'f1', 'name': 'Salmon Sushi', 'description': 'Fresh salmon rolls', 'price': 103.0, 'rating': 4.9, 'image': AppAssets.sushi, 'categoryId': 'meal'},
       {'id': 'f2', 'name': 'Chicken Curry', 'description': 'Spicy home-style curry', 'price': 50.0, 'rating': 4.8, 'image': AppAssets.curry, 'categoryId': 'meal'},
-      {'id': 'f3', 'name': 'Broccoli Lasagna', 'description': 'Cheesy baked lasagna', 'price': 12.99, 'rating': 4.7, 'image': AppAssets.lasagna, 'categoryId': 'vegan'},
+      {'id': 'f3', 'name': 'Lasagna', 'description': 'Cheesy baked lasagna', 'price': 12.99, 'rating': 4.7, 'image': AppAssets.lasagna, 'categoryId': 'vegan'},
       {'id': 'f4', 'name': 'Berry Cupcake', 'description': 'Sweet berry cupcake', 'price': 8.20, 'rating': 4.6, 'image': AppAssets.cupCake, 'categoryId': 'dessert'},
     ],
     'promos': [

@@ -35,20 +35,51 @@ class _DetailsView extends StatelessWidget {
 
   const _DetailsView({required this.foodId});
 
-  void _addToCart(BuildContext context, DetailsState s) {
+  Future<void> _addToCart(BuildContext context, DetailsState s) async {
     final food = s.food!;
-    context.read<CartCubit>().add(CartItem(
+    final cart = context.read<CartCubit>();
+    final messenger = ScaffoldMessenger.of(context);
+    final navigator = Navigator.of(context);
+
+    final toppings = s.selectedToppings.map((t) => t.name).toList();
+
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Add to cart?'),
+        content: Text(
+          '${s.qty} × ${food.name}'
+              '${toppings.isEmpty ? '' : '\n+ ${toppings.join(', ')}'}'
+              '\n\nTotal: \$${s.total.toStringAsFixed(2)}',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            style: TextButton.styleFrom(foregroundColor: AppColors.primary),
+            onPressed: () => Navigator.pop(ctx, true),
+            child: const Text('Confirm'),
+          ),
+        ],
+      ),
+    );
+
+    if (confirmed != true) return;
+
+    cart.add(CartItem(
       foodId: food.id,
       name: food.name,
       image: food.image,
       qty: s.qty,
       unitPrice: s.unitPrice,
-      toppings: s.selectedToppings.map((t) => t.name).toList(),
+      toppings: toppings,
     ));
-    ScaffoldMessenger.of(context)
+    messenger
       ..hideCurrentSnackBar()
       ..showSnackBar(SnackBar(content: Text('${s.qty} × ${food.name} added to cart')));
-    Navigator.pop(context);
+    navigator.pop();
   }
 
   @override

@@ -23,7 +23,7 @@ class WelcomeScreen extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: context.w(40)),
                 child: Text(
-                  AppStrings.loremShort,
+                  AppStrings.welcomeMsg,
                   textAlign: TextAlign.center,
                   style: AppStyles.body(
                     size: context.sp(11),

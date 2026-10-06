@@ -2,10 +2,11 @@ class AppStrings {
   AppStrings._();
 
   static const appName = 'YumQuick';
-  static const loremShort =
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.';
+  static const welcomeMsg =
+      'Discover delicious meals, order your favorites, and enjoy fast delivery.';
 
   static const logIn = 'Log In';
+  static const loginSubtitle = 'Welcome back! Log in to order your favorites and track your delivery.';
   static const signUp = 'Sign Up';
   static const welcome = 'Welcome';
   static const newAccount = 'New Account';

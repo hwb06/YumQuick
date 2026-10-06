@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../helpers/app_colors.dart';
 
-/// Asset aur network dono images handle karta hai (real API ke liye ready).
 class FoodImage extends StatelessWidget {
   final String src;
   final double? width;
