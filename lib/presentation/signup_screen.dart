@@ -58,7 +58,6 @@ class _SignupScreenState extends State<SignupScreen> {
   void _submit() {
     if (!_formKey.currentState!.validate()) return;
 
-    // TODO: Firebase createUser yahan aayega
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Account created! Please log in.')),
     );

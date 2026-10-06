@@ -51,7 +51,7 @@ class _PromoBannerState extends State<PromoBanner> {
             itemCount: widget.items.length,
             onPageChanged: (i) => setState(() => _index = i),
             itemBuilder: (_, i) => Padding(
-              padding: EdgeInsets.symmetric(horizontal: context.w(16)),
+              padding: EdgeInsets.symmetric(horizontal: context.pagePad),
               child: _BannerCard(item: widget.items[i]),
             ),
           ),
@@ -91,10 +91,9 @@ class _BannerCard extends StatelessWidget {
         color: AppColors.primary,
         child: Stack(
           children: [
-            // decorative yellow ring
             Positioned(
               top: -context.w(14),
-              left: -context.w(14),
+              left: -context.w(16),
               child: Container(
                 width: context.w(46),
                 height: context.w(46),

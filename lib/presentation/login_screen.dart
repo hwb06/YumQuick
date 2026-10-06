@@ -33,7 +33,6 @@ class _LoginScreenState extends State<LoginScreen> {
   Future<void> _submit() async {
     if (!_formKey.currentState!.validate()) return;
 
-    // TODO: Firebase auth yahan aayega
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('isLoggedIn', true);
 
@@ -53,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Text(AppStrings.welcome, style: AppStyles.heading(size: context.sp(20))),
             8.vGap,
             Text(
-              AppStrings.loremShort,
+              AppStrings.loginSubtitle,
               style: AppStyles.body(size: context.sp(10), color: AppColors.textGrey),
             ),
             context.h(24).vGap,

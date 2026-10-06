@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../data/models/food_summary.dart';
 import '../../helpers/app_extensions.dart';
+import '../../helpers/app_styles.dart';
 import '../app_widgets/food_image.dart';
 import '../app_widgets/price_tag.dart';
 import '../app_widgets/rating_pill.dart';
@@ -15,15 +16,29 @@ class RecommendCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Stack(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Positioned.fill(child: FoodImage(src: food.image, radius: 16)),
-          Positioned(
-            top: context.w(8),
-            left: context.w(8),
-            child: RatingPill(rating: food.rating),
+          Expanded(
+            child: Stack(
+              children: [
+                Positioned.fill(child: FoodImage(src: food.image, radius: 16)),
+                Positioned(
+                  top: context.w(8),
+                  left: context.w(8),
+                  child: RatingPill(rating: food.rating),
+                ),
+                Positioned(right: 0, bottom: 0, child: PriceTag(price: food.price, radius: 16)),
+              ],
+            ),
           ),
-          Positioned(right: 0, bottom: 0, child: PriceTag(price: food.price, radius: 16)),
+          6.vGap,
+          Text(
+            food.name,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: AppStyles.body(size: context.sp(12), w: FontWeight.w700),
+          ),
         ],
       ),
     );

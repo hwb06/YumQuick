@@ -3,7 +3,6 @@ import '../../helpers/app_colors.dart';
 import '../../helpers/app_extensions.dart';
 import '../../helpers/app_styles.dart';
 
-/// Card ke bottom-right corner mein Positioned(right: 0, bottom: 0) ke sath lagayen.
 class PriceTag extends StatelessWidget {
   final double price;
   final double radius;

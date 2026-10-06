@@ -128,7 +128,7 @@ class _HomeViewState extends State<_HomeView> {
 
   Widget _content(BuildContext context, HomeData d) {
     final bloc = context.read<HomeBloc>();
-    final pad = EdgeInsets.symmetric(horizontal: context.w(16));
+    final pad = EdgeInsets.symmetric(horizontal: context.pagePad);
 
 
     return RefreshIndicator(
@@ -175,7 +175,7 @@ class _HomeViewState extends State<_HomeView> {
               crossAxisCount: 2,
               mainAxisSpacing: context.w(12),
               crossAxisSpacing: context.w(12),
-              childAspectRatio: 1.15,
+              childAspectRatio: 1.0,
               children: d.recommended
                   .map((f) => RecommendCard(food: f, onTap: () => _openDetails(f)))
                   .toList(),

@@ -6,7 +6,7 @@ class CartItem extends Equatable {
   final String name;
   final String image;
   final int qty;
-  final double unitPrice; // base + toppings
+  final double unitPrice;
   final List<String> toppings;
 
   const CartItem({

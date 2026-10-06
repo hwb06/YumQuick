@@ -6,7 +6,7 @@ class ApiConfig {
   static const categories = '/v1/categories';
   static const foods = '/v1/foods';
 
-  static const useMock = true;          // real API aane par false
-  static const simulateError = false;   // true karke ErrorView test karein
+  static const useMock = true;
+  static const simulateError = false;
   static const timeout = Duration(seconds: 10);
 }

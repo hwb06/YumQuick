@@ -52,6 +52,7 @@ class _AppTextFieldState extends State<AppTextField> {
         6.vGap,
         TextFormField(
           controller: widget.controller,
+          scrollPadding: const EdgeInsets.only(bottom: 140),
           validator: widget.validator,
           keyboardType: widget.keyboardType,
           textInputAction: widget.action,

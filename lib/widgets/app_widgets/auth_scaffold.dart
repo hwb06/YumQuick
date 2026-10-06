@@ -11,21 +11,26 @@ class AuthScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final keyboardOpen = MediaQuery.viewInsetsOf(context).bottom > 0;
+    final bottomSafe = MediaQuery.paddingOf(context).bottom;
+
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       backgroundColor: AppColors.secondary,
       body: SafeArea(
         bottom: false,
         child: Column(
           children: [
-            SizedBox(
-              height: context.h(90),
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              height: context.h(keyboardOpen ? 56 : 90),
               child: Stack(
                 alignment: Alignment.center,
                 children: [
                   Align(
                     alignment: Alignment.centerLeft,
                     child: IconButton(
-                      padding: EdgeInsets.only(left: context.w(16)),
+                      padding: EdgeInsets.only(left: context.pagePad - 4),
                       onPressed: () => Navigator.maybePop(context),
                       icon: const Icon(Icons.arrow_back_ios_new_rounded,
                           color: AppColors.primary, size: 16),
@@ -45,13 +50,13 @@ class AuthScaffold extends StatelessWidget {
                 child: SingleChildScrollView(
                   keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
                   padding: EdgeInsets.fromLTRB(
-                    context.w(28),
+                    context.pagePad + 8,
                     context.h(24),
-                    context.w(28),
-                    context.h(24),
+                    context.pagePad + 8,
+                    context.h(24) + bottomSafe + 24, // keyboard/gesture bar ke liye extra
                   ),
                   child: ConstrainedBox(
-                    constraints: BoxConstraints(maxWidth: 500),
+                    constraints: const BoxConstraints(maxWidth: 500),
                     child: child,
                   ),
                 ),
